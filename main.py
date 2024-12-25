@@ -31,6 +31,7 @@ def main():
     limit = get_user_input()
     primes = algorithm(limit)
     print(f"Простые числа до {limit}: {primes}")
+    exit_prog = input("Нажмите Enter для выхода из программы")
 
 if __name__ == "__main__":
     main()
