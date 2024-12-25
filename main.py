@@ -1,6 +1,4 @@
-import asyncio
-
-async def algorithm(limit):
+def algorithm(limit):
     if limit < 2:
         return []
 
@@ -14,7 +12,7 @@ async def algorithm(limit):
 
     return [i for i in range(limit + 1) if is_prime[i]]
 
-async def get_user_input():
+def get_user_input():
     while True:
         try:
             user_input = input("Введите до какого числа будем искать (целое положительное число): ")
@@ -29,10 +27,10 @@ async def get_user_input():
         except ValueError:
             print("Ошибка: Пожалуйста, введите корректное целое число.")
 
-async def main():
-    limit = await get_user_input()
-    primes = await algorithm(limit)
+def main():
+    limit = get_user_input()
+    primes = algorithm(limit)
     print(f"Простые числа до {limit}: {primes}")
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
